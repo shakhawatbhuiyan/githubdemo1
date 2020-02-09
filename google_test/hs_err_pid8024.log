@@ -1,0 +1,407 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32744 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:272), pid=8024, tid=0x0000000000002f50
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_221-b11) (build 1.8.0_221-b11)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.221-b11 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000004764000):  JavaThread "Forwarding newSession on session null to remote" [_thread_in_native, id=12112, stack(0x0000000004660000,0x0000000004760000)]
+
+Stack: [0x0000000004660000,0x0000000004760000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.math.BigDecimal.<clinit>()V+25
+v  ~StubRoutines::call_stub
+j  org.openqa.selenium.json.JsonInput.nextNumber()Ljava/lang/Number;+85
+j  org.openqa.selenium.json.NumberCoercer.lambda$apply$0(Lorg/openqa/selenium/json/JsonInput;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Number;+37
+j  org.openqa.selenium.json.NumberCoercer$$Lambda$190.apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.openqa.selenium.json.JsonTypeCoercer.lambda$null$6(Ljava/util/function/BiFunction;Lorg/openqa/selenium/json/JsonInput;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+18
+j  org.openqa.selenium.json.JsonTypeCoercer$$Lambda$100.apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.openqa.selenium.json.JsonTypeCoercer.coerce(Lorg/openqa/selenium/json/JsonInput;Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+31
+j  org.openqa.selenium.json.ObjectCoercer.lambda$apply$0(Lorg/openqa/selenium/json/JsonInput;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+115
+j  org.openqa.selenium.json.ObjectCoercer$$Lambda$104.apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.openqa.selenium.json.JsonTypeCoercer.lambda$null$6(Ljava/util/function/BiFunction;Lorg/openqa/selenium/json/JsonInput;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+18
+j  org.openqa.selenium.json.JsonTypeCoercer$$Lambda$100.apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.openqa.selenium.json.JsonTypeCoercer.coerce(Lorg/openqa/selenium/json/JsonInput;Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+31
+j  org.openqa.selenium.json.MapCoercer.lambda$null$0(Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/PropertySetting;Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/JsonInput;)Ljava/util/AbstractMap$SimpleImmutableEntry;+21
+j  org.openqa.selenium.json.MapCoercer$$Lambda$102.apply(Ljava/lang/Object;)Ljava/lang/Object;+20
+j  java.util.stream.ReferencePipeline$3$1.accept(Ljava/lang/Object;)V+12
+j  java.util.Iterator.forEachRemaining(Ljava/util/function/Consumer;)V+21
+j  java.util.Spliterators$IteratorSpliterator.forEachRemaining(Ljava/util/function/Consumer;)V+52
+j  java.util.stream.AbstractPipeline.copyInto(Ljava/util/stream/Sink;Ljava/util/Spliterator;)V+32
+j  java.util.stream.AbstractPipeline.wrapAndCopyInto(Ljava/util/stream/Sink;Ljava/util/Spliterator;)Ljava/util/stream/Sink;+13
+j  java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Ljava/util/stream/PipelineHelper;Ljava/util/Spliterator;)Ljava/lang/Object;+6
+j  java.util.stream.AbstractPipeline.evaluate(Ljava/util/stream/TerminalOp;)Ljava/lang/Object;+88
+j  java.util.stream.ReferencePipeline.collect(Ljava/util/stream/Collector;)Ljava/lang/Object;+86
+j  org.openqa.selenium.json.MapCoercer.lambda$apply$1(Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/JsonInput;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+34
+j  org.openqa.selenium.json.MapCoercer$$Lambda$98.apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+20
+j  org.openqa.selenium.json.JsonTypeCoercer.lambda$null$6(Ljava/util/function/BiFunction;Lorg/openqa/selenium/json/JsonInput;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+18
+j  org.openqa.selenium.json.JsonTypeCoercer$$Lambda$100.apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.openqa.selenium.json.JsonTypeCoercer.coerce(Lorg/openqa/selenium/json/JsonInput;Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+31
+j  org.openqa.selenium.json.ObjectCoercer.lambda$apply$0(Lorg/openqa/selenium/json/JsonInput;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+115
+j  org.openqa.selenium.json.ObjectCoercer$$Lambda$104.apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.openqa.selenium.json.JsonTypeCoercer.lambda$null$6(Ljava/util/function/BiFunction;Lorg/openqa/selenium/json/JsonInput;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+18
+j  org.openqa.selenium.json.JsonTypeCoercer$$Lambda$100.apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.openqa.selenium.json.JsonTypeCoercer.coerce(Lorg/openqa/selenium/json/JsonInput;Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+31
+j  org.openqa.selenium.json.MapCoercer.lambda$null$0(Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/PropertySetting;Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/JsonInput;)Ljava/util/AbstractMap$SimpleImmutableEntry;+21
+j  org.openqa.selenium.json.MapCoercer$$Lambda$102.apply(Ljava/lang/Object;)Ljava/lang/Object;+20
+j  java.util.stream.ReferencePipeline$3$1.accept(Ljava/lang/Object;)V+12
+j  java.util.Iterator.forEachRemaining(Ljava/util/function/Consumer;)V+21
+j  java.util.Spliterators$IteratorSpliterator.forEachRemaining(Ljava/util/function/Consumer;)V+52
+j  java.util.stream.AbstractPipeline.copyInto(Ljava/util/stream/Sink;Ljava/util/Spliterator;)V+32
+j  java.util.stream.AbstractPipeline.wrapAndCopyInto(Ljava/util/stream/Sink;Ljava/util/Spliterator;)Ljava/util/stream/Sink;+13
+j  java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Ljava/util/stream/PipelineHelper;Ljava/util/Spliterator;)Ljava/lang/Object;+6
+j  java.util.stream.AbstractPipeline.evaluate(Ljava/util/stream/TerminalOp;)Ljava/lang/Object;+88
+j  java.util.stream.ReferencePipeline.collect(Ljava/util/stream/Collector;)Ljava/lang/Object;+86
+j  org.openqa.selenium.json.MapCoercer.lambda$apply$1(Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/JsonInput;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+34
+j  org.openqa.selenium.json.MapCoercer$$Lambda$98.apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+20
+j  org.openqa.selenium.json.JsonTypeCoercer.lambda$null$6(Ljava/util/function/BiFunction;Lorg/openqa/selenium/json/JsonInput;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+18
+j  org.openqa.selenium.json.JsonTypeCoercer$$Lambda$100.apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.openqa.selenium.json.JsonTypeCoercer.coerce(Lorg/openqa/selenium/json/JsonInput;Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+31
+j  org.openqa.selenium.json.ObjectCoercer.lambda$apply$0(Lorg/openqa/selenium/json/JsonInput;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+115
+j  org.openqa.selenium.json.ObjectCoercer$$Lambda$104.apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.openqa.selenium.json.JsonTypeCoercer.lambda$null$6(Ljava/util/function/BiFunction;Lorg/openqa/selenium/json/JsonInput;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+18
+j  org.openqa.selenium.json.JsonTypeCoercer$$Lambda$100.apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.openqa.selenium.json.JsonTypeCoercer.coerce(Lorg/openqa/selenium/json/JsonInput;Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+31
+j  org.openqa.selenium.json.MapCoercer.lambda$null$0(Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/PropertySetting;Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/JsonInput;)Ljava/util/AbstractMap$SimpleImmutableEntry;+21
+j  org.openqa.selenium.json.MapCoercer$$Lambda$102.apply(Ljava/lang/Object;)Ljava/lang/Object;+20
+j  java.util.stream.ReferencePipeline$3$1.accept(Ljava/lang/Object;)V+12
+j  java.util.Iterator.forEachRemaining(Ljava/util/function/Consumer;)V+21
+j  java.util.Spliterators$IteratorSpliterator.forEachRemaining(Ljava/util/function/Consumer;)V+52
+j  java.util.stream.AbstractPipeline.copyInto(Ljava/util/stream/Sink;Ljava/util/Spliterator;)V+32
+j  java.util.stream.AbstractPipeline.wrapAndCopyInto(Ljava/util/stream/Sink;Ljava/util/Spliterator;)Ljava/util/stream/Sink;+13
+j  java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Ljava/util/stream/PipelineHelper;Ljava/util/Spliterator;)Ljava/lang/Object;+6
+j  java.util.stream.AbstractPipeline.evaluate(Ljava/util/stream/TerminalOp;)Ljava/lang/Object;+88
+j  java.util.stream.ReferencePipeline.collect(Ljava/util/stream/Collector;)Ljava/lang/Object;+86
+j  org.openqa.selenium.json.MapCoercer.lambda$apply$1(Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/JsonInput;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+34
+j  org.openqa.selenium.json.MapCoercer$$Lambda$98.apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+20
+j  org.openqa.selenium.json.JsonTypeCoercer.lambda$null$6(Ljava/util/function/BiFunction;Lorg/openqa/selenium/json/JsonInput;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+18
+j  org.openqa.selenium.json.JsonTypeCoercer$$Lambda$100.apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.openqa.selenium.json.JsonTypeCoercer.coerce(Lorg/openqa/selenium/json/JsonInput;Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+31
+j  org.openqa.selenium.json.ObjectCoercer.lambda$apply$0(Lorg/openqa/selenium/json/JsonInput;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+115
+j  org.openqa.selenium.json.ObjectCoercer$$Lambda$104.apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.openqa.selenium.json.JsonTypeCoercer.lambda$null$6(Ljava/util/function/BiFunction;Lorg/openqa/selenium/json/JsonInput;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+18
+j  org.openqa.selenium.json.JsonTypeCoercer$$Lambda$100.apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.openqa.selenium.json.JsonTypeCoercer.coerce(Lorg/openqa/selenium/json/JsonInput;Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+31
+j  org.openqa.selenium.json.MapCoercer.lambda$null$0(Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/PropertySetting;Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/JsonInput;)Ljava/util/AbstractMap$SimpleImmutableEntry;+21
+j  org.openqa.selenium.json.MapCoercer$$Lambda$102.apply(Ljava/lang/Object;)Ljava/lang/Object;+20
+j  java.util.stream.ReferencePipeline$3$1.accept(Ljava/lang/Object;)V+12
+j  java.util.Iterator.forEachRemaining(Ljava/util/function/Consumer;)V+21
+j  java.util.Spliterators$IteratorSpliterator.forEachRemaining(Ljava/util/function/Consumer;)V+52
+j  java.util.stream.AbstractPipeline.copyInto(Ljava/util/stream/Sink;Ljava/util/Spliterator;)V+32
+j  java.util.stream.AbstractPipeline.wrapAndCopyInto(Ljava/util/stream/Sink;Ljava/util/Spliterator;)Ljava/util/stream/Sink;+13
+j  java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Ljava/util/stream/PipelineHelper;Ljava/util/Spliterator;)Ljava/lang/Object;+6
+j  java.util.stream.AbstractPipeline.evaluate(Ljava/util/stream/TerminalOp;)Ljava/lang/Object;+88
+j  java.util.stream.ReferencePipeline.collect(Ljava/util/stream/Collector;)Ljava/lang/Object;+86
+j  org.openqa.selenium.json.MapCoercer.lambda$apply$1(Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/JsonInput;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+34
+j  org.openqa.selenium.json.MapCoercer$$Lambda$98.apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+20
+j  org.openqa.selenium.json.JsonTypeCoercer.lambda$null$6(Ljava/util/function/BiFunction;Lorg/openqa/selenium/json/JsonInput;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+18
+j  org.openqa.selenium.json.JsonTypeCoercer$$Lambda$100.apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+12
+j  org.openqa.selenium.json.JsonTypeCoercer.coerce(Lorg/openqa/selenium/json/JsonInput;Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+31
+j  org.openqa.selenium.json.Json.toType(Ljava/lang/String;Ljava/lang/reflect/Type;Lorg/openqa/selenium/json/PropertySetting;)Ljava/lang/Object;+46
+j  org.openqa.selenium.json.Json.toType(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;+6
+j  org.openqa.selenium.remote.ProtocolHandshake.createSession(Lorg/openqa/selenium/remote/http/HttpClient;Ljava/io/InputStream;J)Ljava/util/Optional;+81
+j  org.openqa.selenium.remote.ProtocolHandshake.createSession(Lorg/openqa/selenium/remote/http/HttpClient;Lorg/openqa/selenium/remote/Command;)Lorg/openqa/selenium/remote/ProtocolHandshake$Result;+144
+j  org.openqa.selenium.remote.HttpCommandExecutor.execute(Lorg/openqa/selenium/remote/Command;)Lorg/openqa/selenium/remote/Response;+122
+j  org.openqa.selenium.remote.service.DriverCommandExecutor.execute(Lorg/openqa/selenium/remote/Command;)Lorg/openqa/selenium/remote/Response;+21
+j  org.openqa.selenium.remote.RemoteWebDriver.execute(Ljava/lang/String;Ljava/util/Map;)Lorg/openqa/selenium/remote/Response;+74
+j  org.openqa.selenium.remote.RemoteWebDriver.startSession(Lorg/openqa/selenium/Capabilities;)V+11
+j  org.openqa.selenium.remote.RemoteWebDriver.<init>(Lorg/openqa/selenium/remote/CommandExecutor;Lorg/openqa/selenium/Capabilities;)V+65
+j  org.openqa.selenium.chrome.ChromeDriver.<init>(Lorg/openqa/selenium/chrome/ChromeDriverService;Lorg/openqa/selenium/Capabilities;)V+10
+j  org.openqa.selenium.chrome.ChromeDriver.<init>(Lorg/openqa/selenium/chrome/ChromeDriverService;Lorg/openqa/selenium/chrome/ChromeOptions;)V+3
+j  org.openqa.selenium.chrome.ChromeDriver.<init>()V+11
+j  google_test.GoogleOpen.GoogleOpen()V+12
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeMethodAccessorImpl.invoke0(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+100
+j  sun.reflect.DelegatingMethodAccessorImpl.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+56
+j  org.junit.runners.model.FrameworkMethod$1.runReflectiveCall()Ljava/lang/Object;+15
+j  org.junit.internal.runners.model.ReflectiveCallable.run()Ljava/lang/Object;+1
+j  org.junit.runners.model.FrameworkMethod.invokeExplosively(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+10
+j  org.junit.internal.runners.statements.InvokeMethod.evaluate()V+12
+j  org.junit.runners.ParentRunner.runLeaf(Lorg/junit/runners/model/Statement;Lorg/junit/runner/Description;Lorg/junit/runner/notification/RunNotifier;)V+17
+j  org.junit.runners.BlockJUnit4ClassRunner.runChild(Lorg/junit/runners/model/FrameworkMethod;Lorg/junit/runner/notification/RunNotifier;)V+30
+j  org.junit.runners.BlockJUnit4ClassRunner.runChild(Ljava/lang/Object;Lorg/junit/runner/notification/RunNotifier;)V+6
+j  org.junit.runners.ParentRunner$3.run()V+12
+j  org.junit.runners.ParentRunner$1.schedule(Ljava/lang/Runnable;)V+1
+j  org.junit.runners.ParentRunner.runChildren(Lorg/junit/runner/notification/RunNotifier;)V+44
+j  org.junit.runners.ParentRunner.access$000(Lorg/junit/runners/ParentRunner;Lorg/junit/runner/notification/RunNotifier;)V+2
+j  org.junit.runners.ParentRunner$2.evaluate()V+8
+j  org.junit.runners.ParentRunner.run(Lorg/junit/runner/notification/RunNotifier;)V+20
+j  org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(Lorg/eclipse/jdt/internal/junit/runner/TestExecution;)V+72
+j  org.eclipse.jdt.internal.junit.runner.TestExecution.run([Lorg/eclipse/jdt/internal/junit/runner/ITestReference;)V+17
+j  org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests([Ljava/lang/String;Ljava/lang/String;Lorg/eclipse/jdt/internal/junit/runner/TestExecution;)V+62
+j  org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(Lorg/eclipse/jdt/internal/junit/runner/TestExecution;)V+10
+j  org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run()V+70
+j  org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main([Ljava/lang/String;)V+14
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000019142800 JavaThread "Okio Watchdog" daemon [_thread_blocked, id=4468, stack(0x000000001b7f0000,0x000000001b8f0000)]
+  0x0000000019572000 JavaThread "OkHttp ConnectionPool" daemon [_thread_blocked, id=1044, stack(0x000000001b4f0000,0x000000001b5f0000)]
+  0x000000001888e000 JavaThread "Keep-Alive-Timer" daemon [_thread_blocked, id=9552, stack(0x000000001a220000,0x000000001a320000)]
+  0x000000001950c800 JavaThread "Exec Stream Pumper" daemon [_thread_in_native, id=6784, stack(0x000000001a020000,0x000000001a120000)]
+  0x000000001950c000 JavaThread "Exec Stream Pumper" daemon [_thread_in_native, id=8764, stack(0x0000000019f20000,0x000000001a020000)]
+  0x0000000019509000 JavaThread "UrlChecker-2" daemon [_thread_blocked, id=4108, stack(0x0000000019e20000,0x0000000019f20000)]
+  0x000000001925b800 JavaThread "Exec Default Executor" daemon [_thread_in_native, id=6432, stack(0x00000000197b0000,0x00000000198b0000)]
+  0x0000000018e64800 JavaThread "ReaderThread" [_thread_in_native, id=11040, stack(0x00000000196b0000,0x00000000197b0000)]
+  0x00000000185cc800 JavaThread "Service Thread" daemon [_thread_blocked, id=5616, stack(0x0000000018bb0000,0x0000000018cb0000)]
+  0x00000000185c0000 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=4400, stack(0x0000000018ab0000,0x0000000018bb0000)]
+  0x00000000185b1000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=3580, stack(0x00000000189b0000,0x0000000018ab0000)]
+  0x0000000016e5d800 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=10292, stack(0x00000000184b0000,0x00000000185b0000)]
+  0x0000000016e59800 JavaThread "Attach Listener" daemon [_thread_blocked, id=3516, stack(0x00000000183b0000,0x00000000184b0000)]
+  0x0000000016e58800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2596, stack(0x00000000182b0000,0x00000000183b0000)]
+  0x0000000016e39800 JavaThread "Finalizer" daemon [_thread_blocked, id=7364, stack(0x00000000180c0000,0x00000000181c0000)]
+  0x0000000004854000 JavaThread "Reference Handler" daemon [_thread_blocked, id=11928, stack(0x0000000017fc0000,0x00000000180c0000)]
+=>0x0000000004764000 JavaThread "Forwarding newSession on session null to remote" [_thread_in_native, id=12112, stack(0x0000000004660000,0x0000000004760000)]
+
+Other Threads:
+  0x0000000016e17800 VMThread [stack: 0x0000000017ec0000,0x0000000017fc0000] [id=3636]
+  0x00000000185e6800 WatcherThread [stack: 0x0000000018cb0000,0x0000000018db0000] [id=7260]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000000c1800000, size: 1000 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 18944K, used 12193K [0x00000000eb300000, 0x00000000ec800000, 0x0000000100000000)
+  eden space 16384K, 58% used [0x00000000eb300000,0x00000000ebc706f0,0x00000000ec300000)
+  from space 2560K, 98% used [0x00000000ec580000,0x00000000ec7f8010,0x00000000ec800000)
+  to   space 2560K, 0% used [0x00000000ec300000,0x00000000ec300000,0x00000000ec580000)
+ ParOldGen       total 44032K, used 3345K [0x00000000c1800000, 0x00000000c4300000, 0x00000000eb300000)
+  object space 44032K, 7% used [0x00000000c1800000,0x00000000c1b446c0,0x00000000c4300000)
+ Metaspace       used 13675K, capacity 14366K, committed 14592K, reserved 1062912K
+  class space    used 1717K, capacity 1929K, committed 2048K, reserved 1048576K
+
+Card table byte_map: [0x0000000013c20000,0x0000000013e20000] byte_map_base: 0x0000000013614000
+
+Marking Bits: (ParMarkBitMap*) 0x0000000074745ce0
+ Begin Bits: [0x0000000014370000, 0x0000000015310000)
+ End Bits:   [0x0000000015310000, 0x00000000162b0000)
+
+Polling page: 0x0000000002880000
+
+CodeCache: size=245760Kb used=4969Kb max_used=4983Kb free=240791Kb
+ bounds [0x0000000004860000, 0x0000000004d50000, 0x0000000013860000]
+ total_blobs=1759 nmethods=1367 adapters=306
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 11.733 Thread 0x00000000185c0000 1361       3       java.lang.invoke.LambdaForm$DMH/1471868639::invokeStatic_L_L (14 bytes)
+Event: 11.734 Thread 0x00000000185c0000 nmethod 1361 0x0000000004d15a90 code [0x0000000004d15c20, 0x0000000004d16178]
+Event: 11.734 Thread 0x0000000016e5d800 1362   !   4       org.openqa.selenium.json.Input::init (71 bytes)
+Event: 11.740 Thread 0x00000000185c0000 1363       3       java.lang.invoke.BoundMethodHandle::<init> (32 bytes)
+Event: 11.742 Thread 0x00000000185c0000 nmethod 1363 0x0000000004d2ef50 code [0x0000000004d2f0e0, 0x0000000004d2f4f8]
+Event: 11.742 Thread 0x00000000185b1000 1365       4       java.lang.CharacterDataLatin1::isWhitespace (23 bytes)
+Event: 11.742 Thread 0x00000000185c0000 1364       3       org.openqa.selenium.json.JsonInput::peek (288 bytes)
+Event: 11.743 Thread 0x00000000185b1000 nmethod 1365 0x0000000004d15810 code [0x0000000004d15940, 0x0000000004d159d8]
+Event: 11.750 Thread 0x00000000185c0000 nmethod 1364 0x0000000004d2a6d0 code [0x0000000004d2aa60, 0x0000000004d2c498]
+Event: 11.751 Thread 0x00000000185c0000 1366   !   3       java.io.StringReader::read (133 bytes)
+
+GC Heap History (4 events):
+Event: 4.354 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 18944K, used 16384K [0x00000000eb300000, 0x00000000ec800000, 0x0000000100000000)
+  eden space 16384K, 100% used [0x00000000eb300000,0x00000000ec300000,0x00000000ec300000)
+  from space 2560K, 0% used [0x00000000ec580000,0x00000000ec580000,0x00000000ec800000)
+  to   space 2560K, 0% used [0x00000000ec300000,0x00000000ec300000,0x00000000ec580000)
+ ParOldGen       total 44032K, used 0K [0x00000000c1800000, 0x00000000c4300000, 0x00000000eb300000)
+  object space 44032K, 0% used [0x00000000c1800000,0x00000000c1800000,0x00000000c4300000)
+ Metaspace       used 7937K, capacity 8096K, committed 8192K, reserved 1056768K
+  class space    used 931K, capacity 989K, committed 1024K, reserved 1048576K
+Event: 4.367 GC heap after
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 18944K, used 2531K [0x00000000eb300000, 0x00000000ec800000, 0x0000000100000000)
+  eden space 16384K, 0% used [0x00000000eb300000,0x00000000eb300000,0x00000000ec300000)
+  from space 2560K, 98% used [0x00000000ec300000,0x00000000ec578e10,0x00000000ec580000)
+  to   space 2560K, 0% used [0x00000000ec580000,0x00000000ec580000,0x00000000ec800000)
+ ParOldGen       total 44032K, used 1163K [0x00000000c1800000, 0x00000000c4300000, 0x00000000eb300000)
+  object space 44032K, 2% used [0x00000000c1800000,0x00000000c1922e98,0x00000000c4300000)
+ Metaspace       used 7937K, capacity 8096K, committed 8192K, reserved 1056768K
+  class space    used 931K, capacity 989K, committed 1024K, reserved 1048576K
+}
+Event: 7.845 GC heap before
+{Heap before GC invocations=2 (full 0):
+ PSYoungGen      total 18944K, used 18915K [0x00000000eb300000, 0x00000000ec800000, 0x0000000100000000)
+  eden space 16384K, 100% used [0x00000000eb300000,0x00000000ec300000,0x00000000ec300000)
+  from space 2560K, 98% used [0x00000000ec300000,0x00000000ec578e10,0x00000000ec580000)
+  to   space 2560K, 0% used [0x00000000ec580000,0x00000000ec580000,0x00000000ec800000)
+ ParOldGen       total 44032K, used 1163K [0x00000000c1800000, 0x00000000c4300000, 0x00000000eb300000)
+  object space 44032K, 2% used [0x00000000c1800000,0x00000000c1922e98,0x00000000c4300000)
+ Metaspace       used 11826K, capacity 12400K, committed 12672K, reserved 1060864K
+  class space    used 1452K, capacity 1602K, committed 1664K, reserved 1048576K
+Event: 7.863 GC heap after
+Heap after GC invocations=2 (full 0):
+ PSYoungGen      total 18944K, used 2528K [0x00000000eb300000, 0x00000000ec800000, 0x0000000100000000)
+  eden space 16384K, 0% used [0x00000000eb300000,0x00000000eb300000,0x00000000ec300000)
+  from space 2560K, 98% used [0x00000000ec580000,0x00000000ec7f8010,0x00000000ec800000)
+  to   space 2560K, 0% used [0x00000000ec300000,0x00000000ec300000,0x00000000ec580000)
+ ParOldGen       total 44032K, used 3345K [0x00000000c1800000, 0x00000000c4300000, 0x00000000eb300000)
+  object space 44032K, 7% used [0x00000000c1800000,0x00000000c1b446c0,0x00000000c4300000)
+ Metaspace       used 11826K, capacity 12400K, committed 12672K, reserved 1060864K
+  class space    used 1452K, capacity 1602K, committed 1664K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 6.426 Thread 0x0000000019509000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000004adefd4 method=java.lang.CharacterDataLatin1.digit(II)I @ 82
+Event: 8.111 Thread 0x0000000004764000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000004c09044 method=java.util.regex.Matcher.search(I)Z @ 86
+Event: 8.111 Thread 0x0000000004764000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000004b7bce4 method=java.util.regex.Pattern$Curly.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 19
+Event: 8.111 Thread 0x0000000004764000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000004c09044 method=java.util.regex.Matcher.search(I)Z @ 86
+Event: 8.111 Thread 0x0000000004764000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000004c09044 method=java.util.regex.Matcher.search(I)Z @ 86
+Event: 8.111 Thread 0x0000000004764000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000004c09044 method=java.util.regex.Matcher.search(I)Z @ 86
+Event: 8.111 Thread 0x0000000004764000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000004b7bce4 method=java.util.regex.Pattern$Curly.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 19
+Event: 8.173 Thread 0x0000000004764000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000004b7bce4 method=java.util.regex.Pattern$Curly.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 19
+Event: 8.173 Thread 0x0000000004764000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x0000000004b7bce4 method=java.util.regex.Pattern$Curly.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 19
+Event: 8.464 Thread 0x0000000004764000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000004c669e8 method=java.util.regex.Pattern$BmpCharProperty.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 34
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 7.114 Thread 0x0000000004764000 Exception <a 'java/lang/IncompatibleClassChangeError': Found class java.lang.Object, but interface was expected> (0x00000000ebebb9f0) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\interpreter\linkResolver.cp
+Event: 7.133 Thread 0x0000000004764000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$or$2(Ljava/util/function/Predicate;Ljava/lang/Object;)Z> (0x00000000ebeca818) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\interpreter\lin
+Event: 7.301 Thread 0x0000000004764000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ebfffb18) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 7.302 Thread 0x0000000004764000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec001398) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 7.303 Thread 0x0000000004764000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec002930) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 7.306 Thread 0x0000000004764000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec003e70) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 7.306 Thread 0x0000000004764000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec0050e8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 7.310 Thread 0x0000000004764000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec00b0d8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 7.315 Thread 0x0000000004764000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000000ec010788) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 7.641 Thread 0x0000000004764000 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$chars$0()Ljava/util/Spliterator$OfInt;> (0x00000000ec1eeb70) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u221\13320\hotspot\src\share\vm\interpreter\linkResolver.cpp, li
+
+Events (10 events):
+Event: 11.736 loading class org/openqa/selenium/json/JsonInput done
+Event: 11.745 loading class org/openqa/selenium/json/JsonInput
+Event: 11.745 loading class org/openqa/selenium/json/JsonInput done
+Event: 11.746 loading class org/openqa/selenium/json/JsonInput
+Event: 11.746 loading class org/openqa/selenium/json/JsonInput done
+Event: 11.746 loading class org/openqa/selenium/json/NumberCoercer
+Event: 11.746 loading class org/openqa/selenium/json/NumberCoercer done
+Event: 11.747 loading class org/openqa/selenium/json/NumberCoercer$1
+Event: 11.747 loading class org/openqa/selenium/json/NumberCoercer$1 done
+Event: 11.750 loading class java/math/BigDecimal$1
+
+
+Dynamic libraries:
+0x00007ff678950000 - 0x00007ff678987000 	C:\Program Files\Java\jdk1.8.0_221\bin\javaw.exe
+0x00007fff529e0000 - 0x00007fff52bc0000 	C:\windows\SYSTEM32\ntdll.dll
+0x00007fff52820000 - 0x00007fff528ce000 	C:\windows\System32\KERNEL32.DLL
+0x00007fff4f1b0000 - 0x00007fff4f416000 	C:\windows\System32\KERNELBASE.dll
+0x00007fff52750000 - 0x00007fff527f1000 	C:\windows\System32\ADVAPI32.dll
+0x00007fff4feb0000 - 0x00007fff4ff4d000 	C:\windows\System32\msvcrt.dll
+0x00007fff52460000 - 0x00007fff524bb000 	C:\windows\System32\sechost.dll
+0x00007fff505d0000 - 0x00007fff506ef000 	C:\windows\System32\RPCRT4.dll
+0x00007fff50780000 - 0x00007fff5090e000 	C:\windows\System32\USER32.dll
+0x00007fff4f4c0000 - 0x00007fff4f4e0000 	C:\windows\System32\win32u.dll
+0x00007fff50000000 - 0x00007fff50028000 	C:\windows\System32\GDI32.dll
+0x00007fff4ede0000 - 0x00007fff4ef74000 	C:\windows\System32\gdi32full.dll
+0x00007fff4f420000 - 0x00007fff4f4bb000 	C:\windows\System32\msvcp_win.dll
+0x00007fff4fc30000 - 0x00007fff4fd26000 	C:\windows\System32\ucrtbase.dll
+0x00007fff3aba0000 - 0x00007fff3ae09000 	C:\windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.16299.19_none_cc92fab02215da61\COMCTL32.dll
+0x00007fff50b00000 - 0x00007fff50e08000 	C:\windows\System32\combase.dll
+0x00007fff4fd30000 - 0x00007fff4fda2000 	C:\windows\System32\bcryptPrimitives.dll
+0x00007fff50750000 - 0x00007fff5077d000 	C:\windows\System32\IMM32.DLL
+0x0000000073d60000 - 0x0000000073e32000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\msvcr100.dll
+0x0000000073f20000 - 0x00000000747c5000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\server\jvm.dll
+0x00007fff52810000 - 0x00007fff52818000 	C:\windows\System32\PSAPI.DLL
+0x00007fff4cff0000 - 0x00007fff4cff9000 	C:\windows\SYSTEM32\WSOCK32.dll
+0x00007fff50fb0000 - 0x00007fff5101c000 	C:\windows\System32\WS2_32.dll
+0x00007fff4b7d0000 - 0x00007fff4b7f3000 	C:\windows\SYSTEM32\WINMM.dll
+0x00007fff405c0000 - 0x00007fff405ca000 	C:\windows\SYSTEM32\VERSION.dll
+0x00007fff4b7a0000 - 0x00007fff4b7ca000 	C:\windows\SYSTEM32\WINMMBASE.dll
+0x00007fff4fdb0000 - 0x00007fff4fdfa000 	C:\windows\System32\cfgmgr32.dll
+0x00007fff4b680000 - 0x00007fff4b68f000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\verify.dll
+0x00007fff44c70000 - 0x00007fff44c99000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\java.dll
+0x00007fff4b640000 - 0x00007fff4b656000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\zip.dll
+0x00007fff51020000 - 0x00007fff52457000 	C:\windows\System32\SHELL32.dll
+0x00007fff4ff50000 - 0x00007fff4fff6000 	C:\windows\System32\shcore.dll
+0x00007fff4f4e0000 - 0x00007fff4fc27000 	C:\windows\System32\windows.storage.dll
+0x00007fff526f0000 - 0x00007fff52741000 	C:\windows\System32\shlwapi.dll
+0x00007fff4ed50000 - 0x00007fff4ed61000 	C:\windows\System32\kernel.appcore.dll
+0x00007fff4ed70000 - 0x00007fff4edbc000 	C:\windows\System32\powrprof.dll
+0x00007fff4edc0000 - 0x00007fff4eddb000 	C:\windows\System32\profapi.dll
+0x00007fff47830000 - 0x00007fff4784a000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\net.dll
+0x00007fff44730000 - 0x00007fff448fc000 	C:\windows\SYSTEM32\urlmon.dll
+0x00007fff52560000 - 0x00007fff5257d000 	C:\windows\System32\imagehlp.dll
+0x00007fff44490000 - 0x00007fff44729000 	C:\windows\SYSTEM32\iertutil.dll
+0x00007fff4e740000 - 0x00007fff4e74b000 	C:\windows\SYSTEM32\CRYPTBASE.DLL
+0x00007fff4e560000 - 0x00007fff4e5c6000 	C:\windows\system32\mswsock.dll
+0x00007fff4e330000 - 0x00007fff4e3e6000 	C:\windows\SYSTEM32\DNSAPI.dll
+0x00007fff50af0000 - 0x00007fff50af8000 	C:\windows\System32\NSI.dll
+0x00007fff4e2f0000 - 0x00007fff4e329000 	C:\windows\SYSTEM32\IPHLPAPI.DLL
+0x0000000074bc0000 - 0x0000000074be6000 	C:\Program Files\Bonjour\mdnsNSP.dll
+0x00007fff45450000 - 0x00007fff4545a000 	C:\Windows\System32\rasadhlp.dll
+0x00007fff44ed0000 - 0x00007fff44f40000 	C:\windows\System32\fwpuclnt.dll
+0x00007fff4e830000 - 0x00007fff4e855000 	C:\windows\SYSTEM32\bcrypt.dll
+0x00007fff41390000 - 0x00007fff413b4000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\sunec.dll
+0x00007fff44a60000 - 0x00007fff44a6b000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\sunmscapi.dll
+0x00007fff4ef80000 - 0x00007fff4f14e000 	C:\windows\System32\CRYPT32.dll
+0x00007fff4ed30000 - 0x00007fff4ed42000 	C:\windows\System32\MSASN1.dll
+0x00007fff46370000 - 0x00007fff46386000 	C:\windows\SYSTEM32\dhcpcsvc6.DLL
+0x00007fff46350000 - 0x00007fff4636a000 	C:\windows\SYSTEM32\dhcpcsvc.DLL
+0x00007fff44ce0000 - 0x00007fff44cf2000 	C:\Program Files\Java\jdk1.8.0_221\jre\bin\nio.dll
+0x00007fff4e720000 - 0x00007fff4e737000 	C:\windows\SYSTEM32\CRYPTSP.dll
+0x00007fff4e170000 - 0x00007fff4e1a3000 	C:\windows\system32\rsaenh.dll
+0x00007fff4ec30000 - 0x00007fff4ec59000 	C:\windows\SYSTEM32\USERENV.dll
+
+VM Arguments:
+jvm_args: -ea -Dfile.encoding=UTF-8 
+java_command: org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 51408 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames google_test.GoogleOpen
+java_class_path (initial): C:\Users\BackOffice\eclipse-workspace\google_test\target\test-classes;C:\Users\BackOffice\eclipse-workspace\google_test\target\classes;C:\Users\BackOffice\.p2\pool\plugins\org.junit_4.12.0.v201504281640\junit.jar;C:\Users\BackOffice\.p2\pool\plugins\org.hamcrest.core_1.3.0.v20180420-1519.jar;C:\Users\BackOffice\.m2\repository\org\seleniumhq\selenium\selenium-java\3.14.0\selenium-java-3.14.0.jar;C:\Users\BackOffice\.m2\repository\org\seleniumhq\selenium\selenium-api\3.14.0\selenium-api-3.14.0.jar;C:\Users\BackOffice\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.14.0\selenium-chrome-driver-3.14.0.jar;C:\Users\BackOffice\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.14.0\selenium-edge-driver-3.14.0.jar;C:\Users\BackOffice\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.14.0\selenium-firefox-driver-3.14.0.jar;C:\Users\BackOffice\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.14.0\selenium-ie-driver-3.14.0.jar;C:\Users\BackOffice\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.14.0\selenium-opera-driver-3.14.0.jar;C:\Users\BackOffice\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.14.0\selenium-remote-driver-3.14.0.jar;C:\Users\BackOffice\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.14.0\selenium-safari-driver-3.14.0.jar;C:\Users\BackOffice\.m2\repository\org\seleniumhq\selenium\selenium-support\3.14.0\selenium-support-3.14.0.jar;C:\Users\BackOffice\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\BackOffice\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\BackOffice\.m2\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;C:\Users\BackOffice\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\BackOffice\.m2\repository\com\google\guava\guava\25.0-jre\guava-25.0-jre.jar;C:\Users\BackOffice\.m2\repository\com\google\code\findbu
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_221
+PATH=C:/Program Files/Java/jdk1.8.0_221/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_221/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_221/bin/../jre/lib/amd64;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Program Files\Maven\apache-maven-3.6.1\bin;C:\Users\BackOffice\AppData\Local\Microsoft\WindowsApps;C:\Users\BackOffice\AppData\Local\GitHubDesktop\bin;C:\Users\BackOffice\Desktop;
+USERNAME=BackOffice
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 76 Stepping 4, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 16299 (10.0.16299.15)
+
+CPU:total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 76 stepping 4, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, aes, clmul, erms, 3dnowpref, tsc, tscinvbit
+
+Memory: 4k page, physical 4090604k(798920k free), swap 6017248k(4068k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.221-b11) for windows-amd64 JRE (1.8.0_221-b11), built on Jul  4 2019 04:39:29 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Wed Jan 22 00:48:17 2020
+timezone: Eastern Standard Time
+elapsed time: 11 seconds (0d 0h 0m 11s)
+
